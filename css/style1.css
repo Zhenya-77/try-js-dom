@@ -1,0 +1,27 @@
+body {   
+    background-color: cornsilk;
+}
+p {
+    font-weight: 700;
+}
+.text::after {
+    content: ")";
+}
+button {
+    display: block;
+        width: 100px;
+        height: 50px;
+        padding: 0;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+}
