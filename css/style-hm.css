@@ -1,0 +1,25 @@
+body {
+    width: 1440px;
+}
+
+.gallery {
+display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    list-style: none;
+        padding: 0;
+        margin-right: 156px;
+        margin-left: 156px;
+}
+
+.gallery-item {
+    width: 360px;
+}
+
+.gallery-image {
+    display: block;
+    width: 360px;
+        height: 200px;
+        object-fit: cover;
+}
