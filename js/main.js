@@ -1,37 +1,33 @@
 const btn = document.querySelector(".js-btn");
+
 const p = document.createElement("p");
 p.textContent = "Лічильник: 0";
 document.body.append(p);
+
 let count = 0;
 let time = 3;
 let isActiveTaimer = false;
 let intervalId;
+
 btn.addEventListener("click", () => {
   count += 1;
-  p.textContent = `Лічильник: ${count}`;
-  let widthBtn = getComputedStyle(btn).width;
-  let heightBtn = getComputedStyle(btn).height;
-  heightBtn = parseInt(heightBtn);
-  widthBtn = parseInt(widthBtn);
-  heightBtn += 3;
-  widthBtn += 5;
-  btn.style.width = widthBtn + "px";
-  btn.style.height = heightBtn + "px";
-  if (count >= 20) {
-    btn.style.backgroundColor = "red";
-  } else if (count >= 10) {
-    btn.style.backgroundColor = "blue";
-  } else if (count >= 5) {
-    btn.style.backgroundColor = "yellow";
-  }
+  uppdateCount(count);
+  uppdateSizeBtn(5, 3);
+  uppdateColorBySize(count);
+  startTimeForGame(count);
+});
 
+function startTimeForGame(count) {
   if (!isActiveTaimer) {
     isActiveTaimer = true;
+
     intervalId = setInterval(() => {
       time--;
       taimer.textContent = `Таймер: ${time}`;
-      if (time === 0) {
+
+      if (time <= 0) {
         clearInterval(intervalId);
+
         btn.disabled = true;
         taimer.textContent = `Вітаю, ти наклікав ${count}`;
         btn.style = "";
@@ -39,7 +35,32 @@ btn.addEventListener("click", () => {
       }
     }, 1000);
   }
-});
+}
+
+function uppdateCount(count) {
+  p.textContent = `Лічильник: ${count}`;
+}
+
+function uppdateSizeBtn(width, height) {
+  let widthBtn = getComputedStyle(btn).width;
+  let heightBtn = getComputedStyle(btn).height;
+  heightBtn = parseInt(heightBtn);
+  widthBtn = parseInt(widthBtn);
+  heightBtn += height;
+  widthBtn += width;
+  btn.style.width = widthBtn + "px";
+  btn.style.height = heightBtn + "px";
+}
+
+function uppdateColorBySize(count) {
+  if (count >= 20) {
+    btn.style.backgroundColor = "red";
+  } else if (count >= 10) {
+    btn.style.backgroundColor = "blue";
+  } else if (count >= 5) {
+    btn.style.backgroundColor = "yellow";
+  }
+}
 
 const text = document.querySelector(".text");
 

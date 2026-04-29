@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="./css/style-project.css" />
+  </head>
+  <body>
+    <p><a href="./index.html">Go back</a></p>
+    <div class="app">
+      <header class="header">
+        <div>
+          <h1>Job Application Tracker</h1>
+          <p>Відстежуй вакансії, співбесіди та офери</p>
+        </div>
+
+        <button class="btn" id="openFormBtn">+ Add Job</button>
+      </header>
+
+      <section class="controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by position or company..."
+        />
+
+        <select id="statusFilter">
+          <option value="All">All statuses</option>
+          <option value="Applied">Applied</option>
+          <option value="Interview">Interview</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </section>
+
+      <section class="board">
+        <div class="column">
+          <h2>Applied</h2>
+          <div class="job-list" id="appliedList" data-status="Applied"></div>
+        </div>
+
+        <div class="column">
+          <h2>Interview</h2>
+          <div
+            class="job-list"
+            id="interviewList"
+            data-status="Interview"
+          ></div>
+        </div>
+
+        <div class="column">
+          <h2>Offer</h2>
+          <div class="job-list" id="offerList" data-status="Offer"></div>
+        </div>
+
+        <div class="column">
+          <h2>Rejected</h2>
+          <div class="job-list" id="rejectedList" data-status="Rejected"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="jobModal">
+      <div class="modal-content">
+        <h2 id="modalTitle">Add Job</h2>
+
+        <form id="jobForm">
+          <input type="hidden" id="jobId" />
+
+          <label>
+            Position
+            <input type="text" id="positionInput" required />
+          </label>
+
+          <label>
+            Company
+            <input type="text" id="companyInput" required />
+          </label>
+
+          <label>
+            Date
+            <input type="date" id="dateInput" required />
+          </label>
+
+          <label>
+            Status
+            <select id="statusInput" required>
+              <option value="Applied">Applied</option>
+              <option value="Interview">Interview</option>
+              <option value="Offer">Offer</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </label>
+
+          <label>
+            Notes
+            <textarea id="notesInput" rows="3"></textarea>
+          </label>
+
+          <div class="modal-actions">
+            <button type="button" class="btn secondary" id="closeModalBtn">
+              Cancel
+            </button>
+            <button type="submit" class="btn">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./js/project.js"></script>
+  </body>
+</html>
