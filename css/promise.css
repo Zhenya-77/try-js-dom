@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    padding: 20px;
+}
+
+/* сама форма */
+.form {
+    
+    padding: 20px;
+    width: 320px;
+}
+
+/* label з інпутом */
+.form>label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* інпут */
+.form input[type="number"] {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 6px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+/* fieldset */
+fieldset {
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* legend */
+legend {
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+/* радіо кнопки */
+fieldset label {
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+/* кнопка */
+button {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #dcdcdc;
+}
